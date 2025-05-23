@@ -395,21 +395,20 @@ h3 {
   padding: 0 20px;
 }
 
-.contact-info {
-  background-color: #1e1e1e;
-  padding: 30px 40px;
-  border-radius: 15px;
-  border: 1px solid #ff6a6a;
-  color: #ccc;
+.card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
-.contact-info.visible {
+
+.contact-container.visible .card {
   opacity: 1;
   transform: translateY(0);
 }
-
 .contact-info h3 {
   color: #ff6a6a;
   margin-bottom: 20px;
@@ -427,6 +426,39 @@ h3 {
   transition: color 0.3s ease;
 }
 
+.contact-container {
+  perspective: 1200px;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 1s ease, opacity 0.8s ease;
+}
+
+.contact-container.flipped .card {
+  transform: rotateY(180deg) scale(1.02);
+}
+
+.card {
+  transition: transform 1s ease-in-out;
+}
+.contact-container.flipped .card {
+  transform: rotateX(180deg);
+}
+.back {
+  transform: rotateX(180deg);
+}
+
+.front,
+.back {
+  transition: opacity 0.4s ease-in-out;
+}
+.contact-container.flipped .front {
+  opacity: 0;
+}
+.contact-container.flipped .back {
+  opacity: 1;
+}
 .contact-info a:hover {
   color: #ff6a6a;
 }
@@ -640,4 +672,79 @@ h3 {
   .skills-container {
     gap: 15px;
   }
+}
+
+.contact-info {
+  background-color: #1e1e1e;
+  padding: 30px 40px;
+  border-radius: 15px;
+  border: 1px solid #ff6a6a;
+  color: #ccc;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.contact-info.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.contact-container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  border-radius: 15px;
+  padding: 40px 40px;
+  color: #ccc;
+  background-color: #1e1e1e;
+  border: 1px solid #ff6a6a;
+  box-sizing: border-box;
+  min-height: 350px;
+}
+
+.back > p {
+  font-size: 35px;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flip-arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  background: #ff6a6a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.flip-arrow:hover {
+  background: #e85a5a;
 }

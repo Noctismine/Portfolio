@@ -158,3 +158,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elements.forEach((el) => observer.observe(el));
 });
+
+function flipCard() {
+  document.querySelector(".contact-container").classList.toggle("flipped");
+}
+function flipCard() {
+  document.querySelector(".contact-container").classList.toggle("flipped");
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".contact-container").classList.add("visible");
+});
