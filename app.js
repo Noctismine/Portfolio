@@ -169,3 +169,7 @@ function flipCard() {
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".contact-container").classList.add("visible");
 });
+
+let rame = document.getElementById("titlee");
+
+rame.innerText = "<my-portfolio></my-portfolio>";

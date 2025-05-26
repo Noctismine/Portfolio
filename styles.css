@@ -26,14 +26,32 @@ header {
   z-index: 100;
 }
 
+#titlee {
+  font-size: 40px;
+}
+
+@media (max-width: 420px) {
+  #titlee {
+    font-size: 30px;
+  }
+  .titlebidzash {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .titlebidzash {
+    text-align: center;
+  }
+}
+
 .logo {
   color: #de6b64;
-  font-size: 2rem;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: 2px;
   cursor: default;
   user-select: none;
-  text-transform: uppercase;
 }
 
 nav {
