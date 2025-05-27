@@ -122,6 +122,8 @@ nav a:hover {
   padding: 50px 10%;
   flex-wrap: wrap;
   gap: 30px;
+
+  cursor: default;
 }
 
 .image-container {
@@ -131,7 +133,7 @@ nav a:hover {
   transform: translateX(-300px);
   transition: transform 1.5s ease, opacity 1.5s ease;
   will-change: transform, opacity;
-  min-width: 280px; /* prevent shrinking too much */
+  min-width: 280px;
 }
 
 .image-container img {
@@ -299,7 +301,7 @@ h3 {
   font-size: 2.5rem;
   color: #e05555;
   margin-bottom: 30px;
-
+  cursor: default;
   opacity: 0;
   transform: translateY(30px) scale(0.95);
   transition: opacity 1s ease, transform 1s ease;
@@ -308,6 +310,7 @@ h3 {
 
 .section-title.visible {
   opacity: 1;
+  cursor: default;
   transform: translateY(0) scale(1);
 }
 
@@ -545,6 +548,7 @@ h3 {
 .skill-card {
   perspective: 1000px;
   opacity: 0;
+  cursor: default;
   transition: transform 1.5s ease, opacity 1.5s ease;
 }
 
@@ -615,7 +619,7 @@ h3 {
   margin-bottom: 30px;
   font-weight: bold;
   letter-spacing: 1px;
-
+  cursor: default;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   opacity: 0;
   transform: translateY(30px);
@@ -645,6 +649,8 @@ h3 {
   background: #e05555;
   margin: 10px auto 0;
   border-radius: 2px;
+
+  cursor: default;
 }
 
 @media (max-width: 900px) {
@@ -706,6 +712,7 @@ h3 {
   border: 1px solid #ff6a6a;
   color: #ccc;
   opacity: 0;
+  cursor: default;
   transform: translateY(100px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
